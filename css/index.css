@@ -1,0 +1,121 @@
+:root {
+  --soft-blue: hsl(215, 51%, 70%);
+  --cyan: hsl(178, 100%, 50%);
+  --very-dark-blue: rgb(13, 25, 43);
+  --dark-blue: hsl(216, 50%, 16%);
+  --indigo-dye: hsl(215, 32%, 27%);
+  --white: hsl(0, 0%, 100%);
+  --shadow-color: 216deg 86% 2%;
+  --shadow-elevation-high: 0px 0.7px 0.8px hsl(var(--shadow-color) / 0.28),
+    0px 2.8px 3px -0.3px hsl(var(--shadow-color) / 0.27),
+    0px 5px 5.4px -0.6px hsl(var(--shadow-color) / 0.27),
+    0px 7.6px 8.2px -0.9px hsl(var(--shadow-color) / 0.26),
+    0.1px 11.4px 12.3px -1.2px hsl(var(--shadow-color) / 0.25),
+    0.1px 16.6px 17.9px -1.6px hsl(var(--shadow-color) / 0.25),
+    0.1px 24px 25.9px -1.9px hsl(var(--shadow-color) / 0.24),
+    0.2px 33.9px 36.6px -2.2px hsl(var(--shadow-color) / 0.24),
+    0.2px 47px 50.8px -2.5px hsl(var(--shadow-color) / 0.23),
+    0.3px 63.7px 68.8px -2.8px hsl(var(--shadow-color) / 0.22);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background-color: var(--very-dark-blue);
+  font-family: 'Outfit', sans-serif;
+}
+
+.card {
+  font-size: 0.9rem;
+  background-color: var(--dark-blue);
+  max-width: 300px;
+  padding: 1.5em;
+  margin: 2em 0;
+  border-radius: 0.7em;
+  color: var(--soft-blue);
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  box-shadow: var(--shadow-elevation-high);
+}
+
+.card * {
+  margin: 0;
+}
+
+.card-image {
+  width: 100%;
+  border-radius: 0.3em;
+}
+
+.card-title {
+  font-size: 1.2em;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.card-description {
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.card-value-and-expirate {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-value {
+  color: var(--cyan);
+}
+
+.card-expirate {
+  color: var(--soft-blue);
+}
+
+.icon {
+  vertical-align: sub;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid var(--indigo-dye);
+}
+
+.card-author {
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+  color: var(--soft-blue);
+}
+
+.card-author-avatar {
+  width: 30px;
+  border: 1px solid var(--white);
+  border-radius: 50%;
+}
+
+.card-author-name {
+  color: var(--white);
+}
+
+/* Tablets */
+@media screen and (min-width: 480px) {
+  .card {
+    max-width: 350px;
+    font-size: 1rem;
+  }
+}
+
+/* Desktop */
+@media screen and (min-width: 768px) {
+  .card {
+    max-width: 400px;
+    font-size: 1.2rem;
+  }
+}
